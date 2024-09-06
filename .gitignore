@@ -17,3 +17,7 @@ celerybeat.pid
 mysite_data.json
 
 .coverage
+
+media/
+*.jpg
+*.png
