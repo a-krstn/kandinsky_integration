@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Article
+
+
+@admin.register(Article)
+class ArticleAdmin(admin.ModelAdmin):
+    class Meta:
+        fields = ('id', 'author', 'title', 'body', 'image', 'created')
