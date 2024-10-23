@@ -59,7 +59,6 @@ class Text2ImageAPI:
 @shared_task
 def get_image(article_pk):
     article = get_object_or_404(Article, id=article_pk)
-    print(f'Запрос в API: {article.title}')
     api = Text2ImageAPI('https://api-key.fusionbrain.ai/', os.getenv('KANDINSKY_API_KEY'), os.getenv('KANDINSKY_SECRET_KEY'))
     model_id = api.get_model()
     uuid = api.generate(article.body, model_id)

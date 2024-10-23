@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'debug_toolbar',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -140,6 +141,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 
     'DATETIME_FORMAT': "%H:%M:%S %d.%m.%Y",
