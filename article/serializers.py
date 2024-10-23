@@ -17,7 +17,6 @@ class ArticleCreateSerializer(serializers.ModelSerializer):
     
     def create(self, validated_data):
         article = Article.objects.create(**validated_data)
-        print(bool(article.image))
         if not article.image:
             get_image.delay(article.pk)
         print(article.pk)
